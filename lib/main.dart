@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'demo/design_system_demo.dart';
+import 'app/landing_preview_app.dart';
 
-/// Default Flutter application entrypoint.
-void main() => runApp(const DesignSystemDemo());
+/// Default entrypoint: the app preview, not the design-system demo.
+void main() => runApp(const LandingPreviewApp());
