@@ -72,7 +72,7 @@ void main() {
       )));
       expect(
         tester.getSize(find.byType(ElevatedButton)).height,
-        greaterThanOrEqualTo(AppSize.minTouchTarget),
+        greaterThanOrEqualTo(kMinInteractiveDimension),
       );
     });
 

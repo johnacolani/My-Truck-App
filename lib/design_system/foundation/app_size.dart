@@ -1,4 +1,4 @@
-/// Shared dimensions and typography sizes for the independent UI lab.
+/// Typography font sizes and line heights for the independent UI lab.
 /// Values are generic samples and may be overridden in consuming projects.
 abstract final class AppSize {
   // Typography sizes (logical pixels).
@@ -18,11 +18,4 @@ abstract final class AppSize {
   static const double compactLineHeight = 20;
   static const double captionLineHeight = 16;
 
-  // Reusable component sizes (logical pixels).
-  static const double minTouchTarget = 48;
-  static const double buttonHeight = 48;
-  static const double icon = 20;
-  static const double smallIcon = 18;
-  static const double progressIndicator = 18;
-  static const double contentMaxWidth = 720;
 }

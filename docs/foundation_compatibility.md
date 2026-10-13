@@ -6,8 +6,10 @@ generic samples; they are not client or workplace design tokens.
 
 ## Compatibility surface
 
-- `AppSize`: named typography sizes and line heights, alongside existing
-  touch-target, icon, button-height and layout sizing tokens.
+- `AppSize`: typography font sizes and line heights only.
+- `AppComponentSize`: standalone lab component dimensions for touch targets,
+  buttons, icons, loading indicators, and layout widths. This additional
+  utility is **not** part of the shared typography token API.
 - `AppTypography`: `appTitle`, `heading`, `subheading`, `body`,
   `bodySmall`, `label`, `button`, and `caption`. Existing
   `textTheme` remains available for Material components.

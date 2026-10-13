@@ -6,7 +6,8 @@ void main() {
   test('exposes matching light and dark schemes', () {
     expect(AppTheme.light.brightness, Brightness.light);
     expect(AppTheme.dark.brightness, Brightness.dark);
-    expect(AppSize.minTouchTarget, greaterThanOrEqualTo(48));
+    expect(AppSize.bodyFont, 16);
+    expect(AppSize.standardLineHeight, 24);
     expect(AppSpacing.md, greaterThan(AppSpacing.sm));
     expect(AppRadius.md, greaterThan(AppRadius.sm));
   });

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../foundation/app_size.dart';
+import '../foundation/app_component_size.dart';
 import '../foundation/app_spacing.dart';
 
 /// Common responsive screen frame with caller-controlled navigation and content.
@@ -27,7 +27,7 @@ class AppScaffold extends StatelessWidget {
         child: Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(
-              maxWidth: AppSize.contentMaxWidth,
+              maxWidth: AppComponentSize.contentMaxWidth,
             ),
             child: Padding(
               padding: const EdgeInsets.all(AppSpacing.md),

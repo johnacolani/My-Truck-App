@@ -2,6 +2,7 @@
 library;
 
 export 'design_system/foundation/app_colors.dart';
+export 'design_system/foundation/app_component_size.dart';
 export 'design_system/foundation/app_elevation.dart';
 export 'design_system/foundation/app_gradients.dart';
 export 'design_system/foundation/app_radius.dart';

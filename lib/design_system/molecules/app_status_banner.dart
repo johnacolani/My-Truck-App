@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../foundation/app_colors.dart';
 import '../foundation/app_radius.dart';
-import '../foundation/app_size.dart';
+import '../foundation/app_component_size.dart';
 import '../foundation/app_spacing.dart';
 
 enum AppStatusType { success, warning, error, info }
@@ -45,7 +45,7 @@ class AppStatusBanner extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(_icon, size: AppSize.icon, color: foreground),
+              Icon(_icon, size: AppComponentSize.icon, color: foreground),
               const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Column(

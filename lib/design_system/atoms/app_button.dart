@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../foundation/app_size.dart';
+import '../foundation/app_component_size.dart';
 import '../foundation/app_spacing.dart';
 
 enum AppButtonVariant { primary, secondary }
@@ -37,13 +37,13 @@ class AppButton extends StatelessWidget {
       children: [
         if (isLoading) ...[
           const SizedBox(
-            width: AppSize.progressIndicator,
-            height: AppSize.progressIndicator,
+            width: AppComponentSize.progressIndicator,
+            height: AppComponentSize.progressIndicator,
             child: CircularProgressIndicator(strokeWidth: 2),
           ),
           const SizedBox(width: AppSpacing.sm),
         ] else if (leadingIcon != null) ...[
-          Icon(leadingIcon, size: AppSize.icon),
+          Icon(leadingIcon, size: AppComponentSize.icon),
           const SizedBox(width: AppSpacing.sm),
         ],
         Flexible(child: Text(label, textAlign: TextAlign.center)),
@@ -51,7 +51,7 @@ class AppButton extends StatelessWidget {
     );
 
     final ButtonStyle minSize = ElevatedButton.styleFrom(
-      minimumSize: const Size(0, AppSize.minTouchTarget),
+      minimumSize: const Size(0, AppComponentSize.minTouchTarget),
     );
 
     final Widget button = switch (variant) {
@@ -63,7 +63,7 @@ class AppButton extends StatelessWidget {
       AppButtonVariant.secondary => OutlinedButton(
           onPressed: enabledCallback,
           style: OutlinedButton.styleFrom(
-            minimumSize: const Size(0, AppSize.minTouchTarget),
+            minimumSize: const Size(0, AppComponentSize.minTouchTarget),
           ),
           child: content,
         ),

@@ -70,11 +70,11 @@ void main() {
       expect(AppTheme.light.brightness, Brightness.light);
     });
 
-    test('original spacing, corner, and touch target tokens remain', () {
+    test('typography, spacing, corner, and elevation tokens remain', () {
       expect(AppSpacing.md, 16);
       expect(AppRadius.md, 12);
       expect(AppElevation.medium, 3);
-      expect(AppSize.minTouchTarget, 48);
+      expect(AppSize.captionFont, 12);
     });
   });
 }

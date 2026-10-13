@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../foundation/app_colors.dart';
 import '../foundation/app_elevation.dart';
 import '../foundation/app_radius.dart';
-import '../foundation/app_size.dart';
+import '../foundation/app_component_size.dart';
 import '../foundation/app_typography.dart';
 
 /// Light and dark themes built from the lab's independent, generic tokens.
@@ -40,7 +40,7 @@ abstract final class AppTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          minimumSize: const Size(0, AppSize.buttonHeight),
+          minimumSize: const Size(0, AppComponentSize.buttonHeight),
           backgroundColor:
               isDark ? scheme.primary : AppColors.primaryAction,
           foregroundColor:
@@ -52,7 +52,7 @@ abstract final class AppTheme {
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          minimumSize: const Size(0, AppSize.buttonHeight),
+          minimumSize: const Size(0, AppComponentSize.buttonHeight),
           foregroundColor: scheme.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppRadius.md),
