@@ -9,7 +9,7 @@ void main() {
       (tester) async {
     await tester.pumpWidget(const LandingPreviewApp());
 
-    expect(find.text('Design System Lab'), findsOneWidget);
+    expect(find.text('Manifest Truck Mobile'), findsOneWidget);
     expect(find.text('Reusable components'), findsNothing);
     expect(find.text('Primary action'), findsNothing);
 

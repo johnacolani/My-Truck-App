@@ -4,10 +4,10 @@ import 'app.dart';
 import 'config/app_config.dart';
 import 'landing_preview_screen.dart';
 
-/// Optional local-only override keeps client branding out of this public lab.
+/// Optional launch-time title override for independent local previews.
 const _previewTitle = String.fromEnvironment(
   'LAB_PREVIEW_TITLE',
-  defaultValue: 'Design System Lab',
+  defaultValue: 'Manifest Truck Mobile',
 );
 
 /// The default runnable app, intentionally independent of the component demo.

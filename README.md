@@ -39,13 +39,13 @@ Launch the **app landing preview** (default):
 flutter run -d macos
 ```
 
-To preview a different app title **locally only** without checking workplace branding into the lab, you can supply a launch-time value:
+By default, the landing preview displays **Manifest Truck Mobile**. To try a different title **locally only**, supply a launch-time value:
 
 ```bash
-flutter run -d macos --dart-define=LAB_PREVIEW_TITLE='Manifest Truck Mobile'
+flutter run -d macos --dart-define=LAB_PREVIEW_TITLE='Local Preview'
 ```
 
-The personal title is not saved to this repository. The background remains the lab's generic gradient until you replace it with approved sample colors.
+The launch-time override is not saved to this repository. The background remains the lab's generic gradient until you replace it with approved sample colors.
 
 Launch the **design-system demo** (explicit development-only target):
 
@@ -55,7 +55,7 @@ flutter run -d macos -t lib/main_demo.dart
 
 Both targets use the same shared design-system library and app theme. The default `lib/main.dart` does not import or launch the demo; the demo is available separately at `lib/main_demo.dart`. The existing example runner at `example/lib/main.dart` is also a demo entrypoint.
 
-The landing preview uses only generic sample colors from `AppGradients.primaryBackground` and a generic title. Its title is configurable through `LandingPreviewScreen(title: '...')`. Replace sample colors or branding only with assets you are authorized to use. No native launch-screen or splash-screen customization has been added yet.
+The landing preview uses only generic sample colors from `AppGradients.primaryBackground` and a configurable sample title. Its title is configurable through `LandingPreviewScreen(title: '...')`. Replace sample colors or branding only with assets you are authorized to use. No native launch-screen or splash-screen customization has been added yet.
 
 Run quality checks:
 
