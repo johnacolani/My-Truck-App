@@ -11,8 +11,9 @@ final class Success<T> extends Result<T> {
   final T value;
 }
 
-final class Failure<T> extends Result<T> {
-  const Failure(this.reason);
+/// Named differently from the core Failure base to avoid a name collision.
+final class FailureResult<T> extends Result<T> {
+  const FailureResult(this.reason);
 
-  final AppFailure reason;
+  final Failure reason;
 }

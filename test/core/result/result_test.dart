@@ -9,12 +9,12 @@ void main() {
     expect((result as Success<int>).value, 42);
   });
 
-  test('a failed result preserves a typed failure', () {
-    const Result<int> result =
-        Failure<int>(ValidationFailure('Value required'));
-    expect(result, isA<Failure<int>>());
-    final reason = (result as Failure<int>).reason;
-    expect(reason, isA<ValidationFailure>());
-    expect(reason.message, 'Value required');
+  test('a failed result preserves a typed Failure', () {
+    const Failure reason = ValidationFailure('Value required');
+    const Result<int> result = FailureResult<int>(reason);
+    expect(result, isA<FailureResult<int>>());
+    final failure = (result as FailureResult<int>).reason;
+    expect(failure, isA<ValidationFailure>());
+    expect(failure.message, 'Value required');
   });
 }
