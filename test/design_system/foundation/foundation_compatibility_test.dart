@@ -6,6 +6,8 @@ void main() {
   group('Foundation token compatibility', () {
     test('font sizes and line heights match their named styles', () {
       final cases = <(TextStyle, double, double)>[
+        (AppTypography.displaySmall, AppSize.displaySmallFont,
+            AppSize.displaySmallLineHeight),
         (AppTypography.appTitle, AppSize.appTitleFont,
             AppSize.appTitleLineHeight),
         (AppTypography.heading, AppSize.headingFont,
@@ -28,6 +30,9 @@ void main() {
         expect(style.fontSize, fontSize);
         expect(style.height! * fontSize, closeTo(lineHeight, 0.0001));
       }
+      expect(AppTypography.textTheme.displaySmall,
+          AppTypography.displaySmall);
+      expect(AppTypography.displaySmall.fontWeight, AppFontWeight.semiBold);
       expect(AppTypography.subheading.fontSize, AppSize.subheadingFont);
       expect(AppTypography.body.height! * AppSize.bodyFont,
           AppSize.standardLineHeight);

@@ -2,6 +2,7 @@
 /// Values are generic samples and may be overridden in consuming projects.
 abstract final class AppSize {
   // Typography sizes (logical pixels).
+  static const double displaySmallFont = 28;
   static const double appTitleFont = 20;
   static const double headingFont = 18;
   static const double subheadingFont = 16;
@@ -12,6 +13,7 @@ abstract final class AppSize {
   static const double captionFont = 12;
 
   // Typography line heights (logical pixels).
+  static const double displaySmallLineHeight = 35;
   static const double appTitleLineHeight = 28;
   static const double headingLineHeight = 26;
   static const double standardLineHeight = 24;
