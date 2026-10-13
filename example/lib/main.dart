@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_design_system_lab/app/app.dart';
+import 'package:flutter_design_system_lab/app/config/app_config.dart';
 import 'package:flutter_design_system_lab/design_system.dart';
 
 void main() => runApp(const DesignSystemDemo());
@@ -16,11 +18,8 @@ class _DesignSystemDemoState extends State<DesignSystemDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Design System Lab',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.light,
-      darkTheme: AppTheme.dark,
+    return DesignSystemLabApp(
+      config: const AppConfig(appTitle: 'Design System Lab'),
       themeMode: darkMode ? ThemeMode.dark : ThemeMode.light,
       home: AppScaffold(
         title: 'Design System Lab',
