@@ -1,0 +1,19 @@
+# Dart / Flutter
+.dart_tool/
+.packages
+.pub/
+build/
+coverage/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Secrets and local machine settings
+.env
+.env.*
+!.env.example
