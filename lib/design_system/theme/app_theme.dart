@@ -1,22 +1,37 @@
 import 'package:flutter/material.dart';
 
 import '../foundation/app_colors.dart';
+import '../foundation/app_component_size.dart';
 import '../foundation/app_elevation.dart';
 import '../foundation/app_radius.dart';
-import '../foundation/app_component_size.dart';
 import '../foundation/app_typography.dart';
 
-/// Light and dark themes built from the lab's independent, generic tokens.
+/// Light/dark Material themes using only this lab's independent sample tokens.
+/// Application-specific approved palettes must be supplied in the consuming app.
 abstract final class AppTheme {
   static ThemeData get light => _build(Brightness.light);
   static ThemeData get dark => _build(Brightness.dark);
 
   static ThemeData _build(Brightness brightness) {
     final isDark = brightness == Brightness.dark;
-    final scheme = ColorScheme.fromSeed(
-      seedColor: AppColors.primaryBlue,
-      brightness: brightness,
-    );
+
+    // Keep sample light roles explicit rather than deriving them from a seed.
+    // The darker scheme uses Material 3-generated surface/onSurface pairs.
+    final ColorScheme scheme = isDark
+        ? ColorScheme.fromSeed(
+            seedColor: AppColors.primaryBlue,
+            brightness: Brightness.dark,
+          )
+        : const ColorScheme.light(
+            primary: AppColors.primaryBlue,
+            onPrimary: AppColors.textOnDarkPrimary,
+            secondary: AppColors.accentRed,
+            onSecondary: AppColors.buttonText,
+            surface: AppColors.cardSurface,
+            onSurface: AppColors.emphasizedText,
+          );
+
+    final foreground = isDark ? scheme.onSurface : AppColors.emphasizedText;
 
     return ThemeData(
       useMaterial3: true,
@@ -24,7 +39,10 @@ abstract final class AppTheme {
       colorScheme: scheme,
       scaffoldBackgroundColor:
           isDark ? scheme.surface : AppColors.subtleSurface,
-      textTheme: AppTypography.textTheme,
+      textTheme: AppTypography.textTheme.apply(
+        bodyColor: foreground,
+        displayColor: foreground,
+      ),
       appBarTheme: AppBarTheme(
         backgroundColor:
             isDark ? scheme.surface : AppColors.primaryBackgroundTop,
@@ -41,10 +59,8 @@ abstract final class AppTheme {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           minimumSize: const Size(0, AppComponentSize.buttonHeight),
-          backgroundColor:
-              isDark ? scheme.primary : AppColors.primaryAction,
-          foregroundColor:
-              isDark ? scheme.onPrimary : AppColors.buttonText,
+          backgroundColor: isDark ? scheme.primary : AppColors.primaryAction,
+          foregroundColor: isDark ? scheme.onPrimary : AppColors.buttonText,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppRadius.md),
           ),
