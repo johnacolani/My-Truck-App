@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+
 import 'app_colors.dart';
 
-/// Optional gradient for generic demo surfaces.
+/// Reusable sample background gradients.
 abstract final class AppGradients {
-  static const LinearGradient brand = LinearGradient(
+  static const LinearGradient primaryBackground = LinearGradient(
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
-    colors: [AppPalette.primary, AppPalette.primaryDark],
+    colors: [
+      AppColors.primaryBackgroundTop,
+      AppColors.primaryBackgroundBottom,
+    ],
   );
+
+  // Keep the original lab API working.
+  static const LinearGradient brand = primaryBackground;
 }
