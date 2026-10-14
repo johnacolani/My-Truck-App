@@ -34,7 +34,6 @@ void main() {
       expect(AppColors.highlightedSurface, AppPalette.surfaceHighlight);
       expect(AppColors.mutedSurface, AppPalette.surfaceMuted);
       expect(AppColors.warmInformationSurface, AppPalette.surfaceWarm);
-      expect(AppColors.primaryText, AppPalette.textPrimary);
       expect(AppColors.secondaryText, AppPalette.textSecondary);
       expect(AppColors.emphasizedText, AppPalette.textEmphasis);
       expect(AppColors.textOnDarkPrimary, AppPalette.white);

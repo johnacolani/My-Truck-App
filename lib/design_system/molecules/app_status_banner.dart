@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../foundation/app_colors.dart';
+import 'app_status_contrast_colors.dart';
 import '../foundation/app_radius.dart';
 import '../foundation/app_component_size.dart';
 import '../foundation/app_spacing.dart';
@@ -86,12 +87,12 @@ class AppStatusBanner extends StatelessWidget {
 
   Color _foregroundColor(bool dark) => switch (type) {
         AppStatusType.success =>
-          dark ? AppColors.statusSuccessDark : AppColors.statusSuccess,
+          dark ? AppStatusContrastColors.successOnDark : AppColors.statusSuccess,
         AppStatusType.warning =>
-          dark ? AppColors.statusWarningDark : AppColors.statusWarning,
+          dark ? AppStatusContrastColors.warningOnDark : AppColors.statusWarning,
         AppStatusType.error =>
-          dark ? AppColors.statusErrorDark : AppColors.statusError,
+          dark ? AppStatusContrastColors.errorOnDark : AppColors.statusError,
         AppStatusType.info =>
-          dark ? AppColors.statusInfoDark : AppColors.statusInfo,
+          dark ? AppStatusContrastColors.infoOnDark : AppColors.statusInfo,
       };
 }

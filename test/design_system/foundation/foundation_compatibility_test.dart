@@ -38,12 +38,13 @@ void main() {
           AppSize.standardLineHeight);
     });
 
-    test('original and newer palette names remain equivalent', () {
-      expect(AppPalette.primaryBlue, AppPalette.primary);
-      expect(AppPalette.primaryBlueDark, AppPalette.primaryDark);
-      expect(AppPalette.accentRed, AppPalette.accent);
+    test('semantic roles match the approved color palette', () {
+      expect(AppColors.primaryBlue, AppPalette.primaryBlue);
+      expect(AppColors.primaryBlueDark, AppPalette.primaryBlueDark);
+      expect(AppColors.accentRed, AppPalette.accentRed);
       expect(AppColors.primaryBackgroundTop, AppPalette.primaryBlue);
       expect(AppColors.primaryBackgroundBottom, AppPalette.primaryBlueDark);
+      expect(AppColors.primaryAction, AppPalette.accentRed);
       expect(AppColors.mutedSurface, AppPalette.surfaceMuted);
       expect(AppColors.warmInformationSurface, AppPalette.surfaceWarm);
     });

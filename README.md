@@ -55,7 +55,7 @@ flutter run -d macos -t lib/main_demo.dart
 
 Both targets use the same shared design-system library and app theme. The default `lib/main.dart` does not import or launch the demo; the demo is available separately at `lib/main_demo.dart`. The existing example runner at `example/lib/main.dart` is also a demo entrypoint.
 
-The landing preview uses the shared `AppGradients.primaryBackground` colors and a configurable title through `LandingPreviewScreen(title: '...')`. The `AppPalette` constants mirror the authorized reference colors, while existing compatibility aliases keep older lab widgets working. Dark-theme status foreground alternatives remain separate so statuses remain readable against dark surfaces. No native launch-screen or splash-screen customization has been added yet.
+The landing preview uses the shared `AppGradients.primaryBackground` colors and a configurable title through `LandingPreviewScreen(title: '...')`. The `AppPalette` and `AppColors` classes mirror the authorized reference screenshots without extra aliases or dark-only fields. Lab-specific dark-theme status foreground colors live separately in `lib/design_system/molecules/app_status_contrast_colors.dart` to preserve accessibility without changing the approved palette. No native launch-screen or splash-screen customization has been added yet.
 
 Run quality checks:
 
