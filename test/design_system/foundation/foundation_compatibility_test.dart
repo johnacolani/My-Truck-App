@@ -53,10 +53,10 @@ void main() {
       expect(AppColors.statusSuccessStrong, AppPalette.successStrong);
       expect(AppColors.statusError, AppPalette.error);
       expect(AppColors.statusWarning, AppPalette.warning);
-      expect(AppColors.statusInfo, AppPalette.info);
+      expect(AppColors.statusInfo, AppPalette.primaryBlue);
     });
 
-    test('both gradient names use the same generic colors', () {
+    test('both gradient names use the same approved colors', () {
       expect(
         AppGradients.primaryBackground.colors,
         [AppColors.primaryBackgroundTop, AppColors.primaryBackgroundBottom],

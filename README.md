@@ -2,11 +2,11 @@
 
 A standalone Flutter UI toolkit for studying design tokens, reusable components, accessibility, theming, and automated widget tests.
 
-> This is an independent sample project. It does **not** include proprietary client code, restricted mockups, internal documentation, or work repository files.
+> This private lab uses color values that the repository owner confirmed they have permission to reuse. It does **not** include other internal project source files, mockups, or documentation. Confirm reuse rights before publishing or sharing the repository.
 
 ## Included
 
-- **Foundation:** a generic palette and semantic colors, typography, spacing, sizing, radius, elevation, and gradients.
+- **Foundation:** the approved reference palette and semantic colors, typography, spacing, sizing, radius, elevation, and gradients.
 - **Theme:** light and dark Material themes.
 - **Atoms:** a primary/secondary button with loading, disabled, icon, and expanded states.
 - **Molecules:** four-kind status banners, input fields, and cards.
@@ -45,7 +45,7 @@ By default, the landing preview displays **Manifest Truck Mobile**. To try a dif
 flutter run -d macos --dart-define=LAB_PREVIEW_TITLE='Local Preview'
 ```
 
-The launch-time override is not saved to this repository. The background remains the lab's generic gradient until you replace it with approved sample colors.
+The launch-time override is not saved to this repository. The background uses the approved blue gradient (lighter top to darker bottom), but the native platform launch/splash screen remains a separate configuration.
 
 Launch the **design-system demo** (explicit development-only target):
 
@@ -55,7 +55,7 @@ flutter run -d macos -t lib/main_demo.dart
 
 Both targets use the same shared design-system library and app theme. The default `lib/main.dart` does not import or launch the demo; the demo is available separately at `lib/main_demo.dart`. The existing example runner at `example/lib/main.dart` is also a demo entrypoint.
 
-The landing preview uses only generic sample colors from `AppGradients.primaryBackground` and a configurable sample title. Its title is configurable through `LandingPreviewScreen(title: '...')`. Replace sample colors or branding only with assets you are authorized to use. No native launch-screen or splash-screen customization has been added yet.
+The landing preview uses the shared `AppGradients.primaryBackground` colors and a configurable title through `LandingPreviewScreen(title: '...')`. The `AppPalette` constants mirror the authorized reference colors, while existing compatibility aliases keep older lab widgets working. Dark-theme status foreground alternatives remain separate so statuses remain readable against dark surfaces. No native launch-screen or splash-screen customization has been added yet.
 
 Run quality checks:
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'app_colors.dart';
 
-/// Reusable sample background gradients.
+/// Reusable gradients derived from the approved color tokens.
 abstract final class AppGradients {
   static const LinearGradient primaryBackground = LinearGradient(
     begin: Alignment.topCenter,

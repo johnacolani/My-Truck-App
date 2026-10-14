@@ -6,8 +6,8 @@ import '../foundation/app_elevation.dart';
 import '../foundation/app_radius.dart';
 import '../foundation/app_typography.dart';
 
-/// Light/dark Material themes using only this lab's independent sample tokens.
-/// Application-specific approved palettes must be supplied in the consuming app.
+/// Light/dark Material themes using the approved color and component tokens.
+/// Dark surface/onSurface roles are derived for legible contrast.
 abstract final class AppTheme {
   static ThemeData get light => _build(Brightness.light);
   static ThemeData get dark => _build(Brightness.dark);
