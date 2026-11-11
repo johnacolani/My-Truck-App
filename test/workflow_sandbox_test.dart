@@ -29,6 +29,8 @@ void main() {
     await tester.tap(find.byKey(const Key('accept-demo-checkbox')));
     await tester.pump();
     expect(tester.widget<ElevatedButton>(confirm).onPressed, isNotNull);
+    await tester.ensureVisible(confirm);
+    await tester.pumpAndSettle();
     await tester.tap(confirm);
     await tester.pump();
     expect(find.text('Accepted in this local demo.'), findsOneWidget);
