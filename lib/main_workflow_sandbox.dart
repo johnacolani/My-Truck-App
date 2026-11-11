@@ -35,28 +35,24 @@ class _WorkflowSandboxAppState extends State<WorkflowSandboxApp> {
 
   @override
   Widget build(BuildContext context) {
-    final Widget page;
-    switch (_stage) {
-      case _DemoStage.splash:
-        page = SandboxSplashScreen(
+    final Widget page = switch (_stage) {
+      _DemoStage.splash => SandboxSplashScreen(
           duration: widget.splashDuration,
           onComplete: () {
             if (mounted) setState(() => _stage = _DemoStage.landing);
           },
-        );
-      case _DemoStage.landing:
-        page = SandboxLandingScreen(
+        ),
+      _DemoStage.landing => SandboxLandingScreen(
           language: _language,
           onLanguageChanged: _changeLanguage,
           onOpenTerms: () => setState(() => _stage = _DemoStage.terms),
-        );
-      case _DemoStage.terms:
-        page = SandboxTermsScreen(
+        ),
+      _DemoStage.terms => SandboxTermsScreen(
           language: _language,
           onLanguageChanged: _changeLanguage,
           onBack: () => setState(() => _stage = _DemoStage.landing),
-        );
-    }
+        ),
+    };
 
     return MaterialApp(
       title: 'Truck Workflow Lab',
